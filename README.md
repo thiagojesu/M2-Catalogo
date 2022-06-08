@@ -1,4 +1,4 @@
-link do deploy: https://m2pokedex.herokuapp.com/
+link do deploy: https://m2catalogo.herokuapp.com/
 
 -------------------------------------------------------------------------------
 
