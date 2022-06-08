@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>Catalogo</title>
+  </head>
+  <body>
+    <nav id="nav">
+      <ul>
+        <li>
+          <a href="#">
+            <img id="logo" src="https://yt3.ggpht.com/F34YJiWEosHqk8AC2fZRa9eblFKYSxeT5VgvH-k5FvIBfA9sX_lTlyjs-oNgosVuGP82rQcBWQ=s900-c-k-c0x00ffffff-no-rj" alt="logo" />
+          </a>
+        </li>
+        <li>
+          <a href="#todos">Todos os Filmes</a>
+        </li>
+        <li>
+          <a href="#cadastro">Cadastrar</a>
+        </li>
+      </ul>
+    </nav>
+
+    <main>
+      <section id="cards">
+        <h2 id="lista">Lista de filmes</h2>
+
+        <% listafilmes.forEach((filmes)=> { %>
+        <div class="card">
+          <img src="<%= filmes.imagem %>" alt="" />
+          <h3><%= filmes.nome %></h3>
+          <h2 class="genero"><%= filmes.genero %></h2>
+          <p class="descricao"><%= filmes.descricao %></p>
+
+          <a id="editar" href="/detalhes/<%= filmes.id %>">Editar / detalhes</a>
+          <a id="apagar" href="/delete/<%= filmes.id %>">Apagar</a>
+        </div>
+        <% }) %>
+      </section>
+
+      <section id="cadastro">
+        <div>
+          <% if (filmes==undefined) { %>
+          <h2>Cadastre um novo filme!</h2>
+          <form action="/create" method="POST">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required />
+            <label for="genero">genero:</label>
+            <input type="text" id="genero" name="genero" required />
+            <label for="descricao">descricao:</label>
+            <input type="text" id="descricao" name="deescricao" required />
+            <label for="imagem">link da imagem:</label>
+            <input type="text" id="imagem" name="imagem" required />
+            <button id="btnCadastrar" type="submit">Cadastrar</button>
+          </form>
+          <% } else { %>
+          <h2>Atualização de filmes</h2>
+          <form action="/create" method="POST">
+            <label for="nome">Nome:</label>
+            <input
+              type="text"
+              id="nome"
+              name="nome"
+              value="<%= filmes.nome %>"
+            />
+            <label for="genero">genero:</label>
+            <input
+              type="text"
+              id="tipo"
+              name="tipo"
+              value="<%= filmes.tipo %>"
+            />
+            <label for="descricao">descricao:</label>
+            <input
+              type="text"
+              id="genero"
+              name="genero"
+              value="<%= filmes.tipo %>"
+            />
+            <label for="imagem">Link da Imagem</label>
+            <input
+              type="text"
+              id="imagem"
+              name="imagem"
+              value="<%= filmes.imagem %>"
+            />
+            <button id="btnAtualizar" type="submit">Atualizar</button>
+          </form>
+          <% } %>
+        </div>
+      </section>
+
+    </main>
+  </body>
+</html>

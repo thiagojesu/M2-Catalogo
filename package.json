@@ -1,0 +1,27 @@
+{
+  "name": "m2-catalogo",
+  "version": "1.0.0",
+  "description": "\"um catalogo simples\"",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index",
+    "dev": "nodemon index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thiagojesu/M2-Catalogo.git"
+  },
+  "author": "Thiago de Jesus Nunes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thiagojesu/M2-Catalogo/issues"
+  },
+  "homepage": "https://github.com/thiagojesu/M2-Catalogo#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  },
+  "dependencies": {
+    "ejs": "^3.1.8",
+    "express": "^4.18.1"
+  }
+}
